@@ -1,0 +1,9 @@
+fastapi
+uvicorn[standard]
+requests
+numpy
+python-dotenv
+google-generativeai
+streamlit
+plotly
+pandas
