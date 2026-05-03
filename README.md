@@ -23,13 +23,11 @@ Full Python + JavaScript rebuild of the Quantum Finance app.
    npm install
    ```
 
-3. Add your API keys to `.env`:
+3. Add your API key to `.env`:
    ```
    GEMINI_API_KEY=your_gemini_key
-   HUGGINGFACE_API_KEY=your_hf_key
    ```
    - Gemini key: https://aistudio.google.com/apikey
-   - Hugging Face key: https://huggingface.co/settings/tokens
 
 ## Run
 
