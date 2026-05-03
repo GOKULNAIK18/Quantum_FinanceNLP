@@ -60,6 +60,7 @@ class TopAlternative(BaseModel):
 class AnalysisResult(BaseModel):
     ticker: str
     company_name: str
+    currency: str
     price: float
     change: float
     change_percent: float
@@ -119,6 +120,7 @@ async def analyze(ticker: str):
     return AnalysisResult(
         ticker=ticker,
         company_name=quote.company_name,
+        currency=quote.currency,
         price=quote.price,
         change=quote.change,
         change_percent=quote.change_percent,

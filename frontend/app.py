@@ -150,7 +150,7 @@ st.markdown("""
 # ── Search ────────────────────────────────────────────────────────────────────
 c1, c2, c3 = st.columns([1, 3, 1])
 with c2:
-    ticker_input = st.text_input("", placeholder="Enter ticker — e.g. AAPL, TSLA, MSFT", max_chars=10, label_visibility="collapsed").upper().strip()
+    ticker_input = st.text_input("Ticker", placeholder="Enter ticker — e.g. AAPL, TSLA, MSFT", max_chars=10, label_visibility="collapsed").upper().strip()
     search = st.button("⚛  Analyse", use_container_width=True)
 
 if not (search and ticker_input):
