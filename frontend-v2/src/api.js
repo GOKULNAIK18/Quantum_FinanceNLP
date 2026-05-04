@@ -1,4 +1,4 @@
-const BASE = import.meta.env.VITE_API_URL || '/api'
+const BASE = import.meta.env.VITE_API_URL || 'https://quantumfinancenlp-production.up.railway.app'
 
 export async function analyzeTicket(ticker) {
   const res = await fetch(`${BASE}/analyze/${encodeURIComponent(ticker)}`)
