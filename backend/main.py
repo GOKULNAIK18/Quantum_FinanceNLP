@@ -31,6 +31,7 @@ app.add_middleware(
     allow_origins=["*"],
     allow_methods=["GET"],
     allow_headers=["*"],
+    allow_credentials=False,
 )
 
 class NewsItem(BaseModel):
