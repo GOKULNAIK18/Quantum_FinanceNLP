@@ -6,3 +6,4 @@ yfinance
 transformers
 torch
 google-genai
+pandas
