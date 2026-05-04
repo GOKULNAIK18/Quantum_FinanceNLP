@@ -82,6 +82,10 @@ class AnalysisResult(BaseModel):
 
 _executor = ThreadPoolExecutor()
 
+@app.get("/health")
+def health():
+    return {"status": "ok"}
+
 @app.get("/analyze/{ticker}", response_model=AnalysisResult)
 async def analyze(ticker: str):
     loop = asyncio.get_event_loop()
