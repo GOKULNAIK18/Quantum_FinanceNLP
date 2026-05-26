@@ -47,7 +47,7 @@ async function analyse() {
     renderResults(results, data)
   } catch (e) {
     const msg = e.message.includes('Failed to fetch')
-      ? 'Cannot connect to backend. Make sure the FastAPI server is running on port 8000.'
+      ? 'Cannot connect to backend. Make sure the Railway backend is running.'
       : `Analysis failed: ${e.message}`
     errorBox.textContent = msg
     errorBox.classList.remove('hidden')
