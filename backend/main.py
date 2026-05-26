@@ -15,14 +15,12 @@ from pydantic import BaseModel
 from typing import List
 
 from yahoo import get_quote, get_news, get_peers
-from finbert import analyze_headlines, _get_pipe
+from finbert import analyze_headlines
 from quantum import run_quantum_circuit
 from gemini import get_peers_and_alternative
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    loop = asyncio.get_event_loop()
-    await loop.run_in_executor(_executor, _get_pipe)
     yield
 
 app = FastAPI(title="Quantum Finance API", lifespan=lifespan)
