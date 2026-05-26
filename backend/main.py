@@ -23,8 +23,6 @@ from gemini import get_peers_and_alternative
 async def lifespan(app: FastAPI):
     loop = asyncio.get_event_loop()
     await loop.run_in_executor(_executor, _get_pipe)
-    # warm up with a dummy inference so first real request is fast
-    await loop.run_in_executor(_executor, analyze_headlines, ["market update"])
     yield
 
 app = FastAPI(title="Quantum Finance API", lifespan=lifespan)
