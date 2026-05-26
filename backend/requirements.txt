@@ -1,10 +1,8 @@
---extra-index-url https://download.pytorch.org/whl/cpu
 fastapi
 uvicorn[standard]
 python-dotenv
 numpy
 yfinance
-transformers
-torch
+requests
 google-genai
 pandas
