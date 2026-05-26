@@ -45,10 +45,10 @@ _CURRENCY_MAP = {
 
 def get_quote(ticker: str) -> Quote:
     resolved, info = _resolve_ticker(ticker)
-    price = info.get("currentPrice") or info.get("regularMarketPrice", 0)
+    price = info.get("currentPrice") or info.get("regularMarketPrice") or info.get("navPrice", 0)
     prev_close = info.get("previousClose") or info.get("regularMarketPreviousClose", price)
-    change = price - prev_close
-    change_percent = (change / prev_close) if prev_close else 0
+    change = round(price - prev_close, 4)
+    change_percent = round(change / prev_close, 6) if prev_close else 0
 
     suffix = next((s for s in _CURRENCY_MAP if resolved.endswith(s)), "")
     currency = info.get("currency") or _CURRENCY_MAP.get(suffix, "USD")
